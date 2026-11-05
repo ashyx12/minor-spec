@@ -1,0 +1,26 @@
+{
+  "raw_rows": 541909,
+  "missing_by_column": {
+    "InvoiceNo": 0,
+    "StockCode": 0,
+    "Description": 1454,
+    "Quantity": 0,
+    "InvoiceDate": 0,
+    "UnitPrice": 0,
+    "CustomerID": 135080,
+    "Country": 0
+  },
+  "exact_duplicates_removed": 5268,
+  "invalid_rows_removed": 2,
+  "non_merchandise_rows_removed": 2987,
+  "retained_rows": 533652,
+  "return_rows": 9992,
+  "zero_price_rows": 2480,
+  "anonymous_rows": 133963,
+  "quantity_above_99pct_rows": 4935,
+  "price_above_99pct_rows": 4889,
+  "first_timestamp": "2010-12-01 08:26:00",
+  "last_timestamp": "2011-12-09 12:50:00",
+  "modeling_purchase_rows": 391150,
+  "purchase_customers": 4334
+}

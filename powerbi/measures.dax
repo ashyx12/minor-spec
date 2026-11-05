@@ -1,0 +1,24 @@
+// Create each definition below as a separate measure in Power BI Desktop.
+Net Merchandise Revenue = SUM(FactSales[Revenue])
+
+Gross Purchase Revenue = CALCULATE(SUM(FactSales[Revenue]), FactSales[IsReturn] = FALSE())
+
+Return Value = -CALCULATE(SUM(FactSales[Revenue]), FactSales[IsReturn] = TRUE())
+
+Return Value Rate = DIVIDE([Return Value], [Gross Purchase Revenue])
+
+Purchase Orders = CALCULATE(DISTINCTCOUNT(FactSales[InvoiceNo]), FactSales[IsReturn] = FALSE(), FactSales[Revenue] > 0)
+
+Average Order Value = DIVIDE([Gross Purchase Revenue], [Purchase Orders])
+
+Known Purchasing Customers = CALCULATE(DISTINCTCOUNT(FactSales[CustomerID]), FactSales[CustomerID] <> "UNKNOWN", FactSales[IsReturn] = FALSE(), FactSales[Revenue] > 0)
+
+Units Purchased = CALCULATE(SUM(FactSales[Quantity]), FactSales[IsReturn] = FALSE())
+
+Revenue Previous Month = CALCULATE([Net Merchandise Revenue], DATEADD(DimDate[Date], -1, MONTH))
+
+Revenue MoM Change = DIVIDE([Net Merchandise Revenue] - [Revenue Previous Month], [Revenue Previous Month])
+
+Modeled Customers As Of = COUNTROWS(FILTER(DimCustomer, NOT ISBLANK(DimCustomer[RepeatProbability30d])))
+
+Average Repeat Probability As Of = AVERAGE(DimCustomer[RepeatProbability30d])

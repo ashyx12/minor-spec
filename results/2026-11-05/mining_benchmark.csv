@@ -1,0 +1,3 @@
+algorithm,seconds,itemsets,baskets,catalog_size
+apriori,0.3542169140000624,250,18402,300
+fpgrowth,5.659015328999999,250,18402,300

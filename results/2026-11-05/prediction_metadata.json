@@ -1,0 +1,10 @@
+{
+  "selected_model": "logistic",
+  "threshold": 0.22499999999999998,
+  "target": "purchase_within_30_days",
+  "test_ap_ci_low": 0.6086785600365661,
+  "test_ap_ci_high": 0.6638732514568919,
+  "train_rows": 9417,
+  "validation_rows": 3613,
+  "test_rows": 3970
+}
